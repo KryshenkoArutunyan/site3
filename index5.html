@@ -1,0 +1,41 @@
+<!Doctype html>
+<head>
+<link rel="stylesheet" type="text/css" href="index5.css">  
+
+<meta charset="utf-8">
+<title>Персональные данные</title>   
+</head>
+<script>
+   function mes_go() {
+     var form   = document.forms.mess,
+    nomail = form.m_to.value.indexOf('@') == -1,
+         notext = !form.let.value,
+      xtext  = "\nПисьмо не отправлено";
+      if (nomail || notext) {
+       if (nomail)
+        alert("Неправильный адрес получателя" + xtext);
+       else
+            alert("Поле сообщения пусто" + xtext)
+     } 
+else{
+       window.open("mailto:" + form.m_to.value+'?body='+form.let.value, '_blank');
+       }
+return false;
+ }
+
+ </script>
+<h1>Персональные данные</h1>
+<body>
+<form name="form" align="center">
+
+
+<p>E-mail:</p><input type="text" id="E1"  name="missanaida@yandex.ru">
+<p>ФИО:</p><input type="text" id="p1" name="Аарутюнян Анаида Андраниковна">
+<p>Паспортные данные:</p><input type="text" id="p2" name="6100 00234">
+<p>Почтовый адрес:</p><input type="text"  id="p3" name="ул. Ленина 93">
+<p>Индекс:</p><input type="text"  id="p4" name="892345">
+
+  <p><input name="subm" type="submit" value="Зарегистрироваться" class="zareg" onClick="mes_go()"></p>
+</form>
+</body>
+</html>
